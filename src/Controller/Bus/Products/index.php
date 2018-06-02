@@ -21,8 +21,8 @@ $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
-            'id' => 'name',
-            'label' => __('LABEL_NAME')
+            'id' => 'id',
+            'label' => __('LABEL_TEL')
         ))
         ->addElement(array(
             'id' => 'limit',
@@ -56,9 +56,14 @@ $this->SimpleTable
         ))
         ->addColumn(array(
             'id' => 'id',
-            'title' => __('LABEL_NAME'),
+            'title' => __('LABEL_TEL'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'cate_name',
+            'title' => __('LABEL_CATEGORY'),
             'empty' => ''
         ))
         ->addColumn(array(

@@ -16,7 +16,7 @@
                         novalidate="novalidate" 
                         action="/products/update/<?php echo !empty($param['id']) ? $param['id'] : '';?>">
                         <div class="form-group">
-                            <label><?php echo __('LABEL_PHONE');?></label>
+                            <label><?php echo __('LABEL_TEL');?></label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                   <i class="fa fa-phone"></i>

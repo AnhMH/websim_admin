@@ -29,7 +29,7 @@ msgid "LABEL_ORDER_MANAGEMENT"
 msgstr "Quản lý đơn hàng"
 
 msgid "LABEL_PRODUCT_MANAGEMENT"
-msgstr "Quản lý sản phẩm"
+msgstr "Quản lý sim"
 
 msgid "LABEL_CUSTOMER_MANAGEMENT"
 msgstr "Quản lý khách hàng"
@@ -146,10 +146,10 @@ msgid "LABEL_SUPPLIER_UPDATE"
 msgstr "Cập nhật nhà cung cấp"
 
 msgid "LABEL_PRODUCT_LIST"
-msgstr "Danh sách sản phẩm"
+msgstr "Danh sách sim"
 
 msgid "LABEL_PRODUCT_UPDATE"
-msgstr "Cập nhật sản phẩm"
+msgstr "Cập nhật sim"
 
 msgid "LABEL_PRICE"
 msgstr "Giá"
@@ -162,3 +162,30 @@ msgstr "Mô tả"
 
 msgid "LABEL_AGENT_PRICE"
 msgstr "Giá đại lý"
+
+msgid "LABEL_SUPPLIER"
+msgstr "Đại lý"
+
+msgid "LABEL_CATEGORY"
+msgstr "Nhà mạng"
+
+msgid "LABEL_TAG"
+msgstr "Thể loại"
+
+msgid "LABEL_CATE_MANAGEMENT"
+msgstr "Quản lý nhà mạng"
+
+msgid "LABEL_CATE_LIST"
+msgstr "Danh sách nhà mạng"
+
+msgid "LABEL_CATE_UPDATE"
+msgstr "Cập nhật nhà mạng"
+
+msgid "LABEL_TAG_MANAGEMENT"
+msgstr "Quản lý thể loại"
+
+msgid "LABEL_TAG_LIST"
+msgstr "Danh sách thể loại"
+
+msgid "LABEL_TAG_UPDATE"
+msgstr "Cập nhật thể loại"
