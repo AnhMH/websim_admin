@@ -20,6 +20,10 @@ Configure::write('API.url_suppliers_list', 'suppliers/list');
 Configure::write('API.url_suppliers_detail', 'suppliers/detail');
 Configure::write('API.url_suppliers_addupdate', 'suppliers/addupdate');
 
+Configure::write('API.url_cates_list', 'cates/list');
+Configure::write('API.url_cates_detail', 'cates/detail');
+Configure::write('API.url_cates_addupdate', 'cates/addupdate');
+
 Configure::write('API.url_products_list', 'products/list');
 Configure::write('API.url_products_detail', 'products/detail');
 Configure::write('API.url_products_addupdate', 'products/addupdate');
