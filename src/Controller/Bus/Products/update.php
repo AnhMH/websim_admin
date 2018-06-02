@@ -23,7 +23,7 @@ if (!empty($id)) {
     // Create new
     $pageTitle = __('LABEL_ADD_NEW');
 }
-
+$data['cates'] = Api::call(Configure::read('API.url_cates_all'), array());
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/products');
 $this->Breadcrumb->setTitle($pageTitle)
@@ -39,9 +39,6 @@ $this->Breadcrumb->setTitle($pageTitle)
 if ($this->request->is('post')) {
     // Trim data
     $data = $this->request->data();
-    echo '<pre>';
-    print_r($data);
-    die();
     foreach ($data as $key => $value) {
         if (is_scalar($value)) {
             $data[$key] = trim($value);
