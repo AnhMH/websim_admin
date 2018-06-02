@@ -28,6 +28,7 @@ $(document).ready(function ($) {
         location.href = baseUrl + '/' + controller + '/update';
         return false;
     });
+    $('.select2').select2();
 });
 
 /**

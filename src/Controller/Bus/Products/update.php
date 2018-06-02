@@ -7,6 +7,7 @@ use Cake\Network\Exception\NotFoundException;
 
 // Load detail
 $data = null;
+$form = new UpdateProductForm();
 if (!empty($id)) {
     // Edit
     $param['id'] = $id;
@@ -16,7 +17,7 @@ if (!empty($id)) {
         AppLog::info("Product unavailable", __METHOD__, $param);
         throw new NotFoundException("Product unavailable", __METHOD__, $param);
     }
-    
+
     $pageTitle = __('LABEL_PRODUCT_UPDATE');
 } else {
     // Create new
@@ -26,49 +27,21 @@ if (!empty($id)) {
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/products');
 $this->Breadcrumb->setTitle($pageTitle)
-    ->add(array(
-        'link' => $listPageUrl,
-        'name' => __('LABEL_PRODUCT_LIST'),
-    ))
-    ->add(array(
-        'name' => $pageTitle,
-    ));
-
-// Create Update form 
-$form = new UpdateProductForm();
-$this->UpdateForm->reset()
-    ->setModel($form)
-    ->setData($data)
-    ->setAttribute('autocomplete', 'off')
-    ->addElement(array(
-        'id' => 'id',
-        'label' => __('id'),
-        'required' => true,
-    ))
-    ->addElement(array(
-        'id' => 'price',
-        'label' => __('LABEL_PRICE'),
-    ))
-    ->addElement(array(
-        'id' => 'agent_price',
-        'label' => __('LABEL_AGENT_PRICE'),
-    ))
-    ->addElement(array(
-        'type' => 'submit',
-        'value' => __('LABEL_SAVE'),
-        'class' => 'btn btn-primary',
-    ))
-    ->addElement(array(
-        'type' => 'submit',
-        'value' => __('LABEL_CANCEL'),
-        'class' => 'btn',
-        'onclick' => "return back();"
-    ));
+        ->add(array(
+            'link' => $listPageUrl,
+            'name' => __('LABEL_PRODUCT_LIST'),
+        ))
+        ->add(array(
+            'name' => $pageTitle,
+        ));
 
 // Valdate and update
 if ($this->request->is('post')) {
     // Trim data
     $data = $this->request->data();
+    echo '<pre>';
+    print_r($data);
+    die();
     foreach ($data as $key => $value) {
         if (is_scalar($value)) {
             $data[$key] = trim($value);
@@ -84,7 +57,7 @@ if ($this->request->is('post')) {
         }
         // Call API
         $id = Api::call(Configure::read('API.url_products_addupdate'), $data);
-        if (!empty($id) && !Api::getError()) {            
+        if (!empty($id) && !Api::getError()) {
             $this->Flash->success(__('MESSAGE_SAVE_OK'));
             return $this->redirect("{$this->BASE_URL}/{$this->controller}/update/{$id}");
         } else {
@@ -92,3 +65,6 @@ if ($this->request->is('post')) {
         }
     }
 }
+
+$this->set('data', $data);
+$this->set('param', $param);

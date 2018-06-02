@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/AdminLTE.min.css?<?php echo VERSION_DATE ?>"/>
+        <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/bower_components/select2/dist/css/select2.min.css"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/skins/skin-blue.min.css?<?php echo VERSION_DATE ?>"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/plugins/pace/pace.min.css"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/css/bootstrap-toggle.min.css"/>
@@ -66,6 +67,7 @@
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/jquery-migrate-1.4.1.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/bootstrap-toggle.min.js"></script>
+        <script type="text/javascript" src="<?php echo $BASE_URL ?>/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/adminlte/plugins/pace/pace.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/adminlte/dist/js/adminlte.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/functions.js?<?php echo VERSION_DATE ?>"></script>
