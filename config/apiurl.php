@@ -17,6 +17,7 @@ Configure::write('API.url_customers_detail', 'customers/detail');
 Configure::write('API.url_customers_addupdate', 'customers/addupdate');
 
 Configure::write('API.url_suppliers_list', 'suppliers/list');
+Configure::write('API.url_suppliers_all', 'suppliers/all');
 Configure::write('API.url_suppliers_detail', 'suppliers/detail');
 Configure::write('API.url_suppliers_addupdate', 'suppliers/addupdate');
 

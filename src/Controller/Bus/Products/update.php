@@ -24,6 +24,7 @@ if (!empty($id)) {
     $pageTitle = __('LABEL_ADD_NEW');
 }
 $data['cates'] = Api::call(Configure::read('API.url_cates_all'), array());
+$data['suppliers'] = Api::call(Configure::read('API.url_suppliers_all'), array());
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/products');
 $this->Breadcrumb->setTitle($pageTitle)
