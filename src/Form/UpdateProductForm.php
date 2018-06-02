@@ -15,7 +15,7 @@ class UpdateProductForm extends Form {
      */
     protected function _buildValidator(Validator $validator) {
         return $validator
-                        ->notEmpty('name', __('MESSAGE_REQUIRED_NAME'))
+                        ->notEmpty('id', __('MESSAGE_REQUIRED_NAME'))
         ;
     }
 

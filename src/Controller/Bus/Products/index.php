@@ -30,12 +30,6 @@ $this->SearchForm
             'options' => Configure::read('Config.searchPageSize'),
         ))
         ->addElement(array(
-            'id' => 'disable',
-            'label' => __('LABEL_STATUS'),
-            'options' => Configure::read('Config.searchStatus'),
-            'empty' => 0
-        ))
-        ->addElement(array(
             'type' => 'submit',
             'value' => __('LABEL_SEARCH'),
             'class' => 'btn btn-primary',
@@ -61,23 +55,10 @@ $this->SimpleTable
             'width' => 20,
         ))
         ->addColumn(array(
-            'id' => 'avatar',
-            'title' => __('LABEL_AVATAR'),
-            'type' => 'image',
-            'src' => '{avatar}',
-            'width' => 110,
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'name',
+            'id' => 'id',
             'title' => __('LABEL_NAME'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'description',
-            'title' => __('LABEL_DESCRIPTION'),
             'empty' => ''
         ))
         ->addColumn(array(
@@ -87,8 +68,8 @@ $this->SimpleTable
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'discount',
-            'title' => __('LABEL_DISCOUNT'),
+            'id' => 'agent_price',
+            'title' => __('LABEL_AGENT_PRICE'),
             'width' => 150,
             'empty' => ''
         ))
@@ -111,19 +92,6 @@ $this->SimpleTable
             'value' => __('LABEL_ADD_NEW'),
             'class' => 'btn btn-success btn-addnew',
         ));
-if (!empty($param['disable'])) {
-    $this->SimpleTable->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_ENABLE'),
-            'class' => 'btn asds btn-primary btn-enable',
-        ));
-} else {
-    $this->SimpleTable->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_DELETE'),
-            'class' => 'btn btn-danger btn-disable',
-        ));
-} 
 
 $this->set('pageTitle', $pageTitle);
 $this->set('total', $total);

@@ -42,32 +42,16 @@ $this->UpdateForm->reset()
     ->setAttribute('autocomplete', 'off')
     ->addElement(array(
         'id' => 'id',
-        'type' => 'hidden',
         'label' => __('id'),
-    ))
-    ->addElement(array(
-        'id' => 'name',
-        'label' => __('LABEL_NAME'),
         'required' => true,
-    ))
-    ->addElement(array(
-        'id' => 'avatar',
-        'label' => __('LABEL_AVATAR'),
-        'image' => true,
-        'type' => 'file'
     ))
     ->addElement(array(
         'id' => 'price',
         'label' => __('LABEL_PRICE'),
     ))
     ->addElement(array(
-        'id' => 'discount',
-        'label' => __('LABEL_DISCOUNT'),
-    ))
-    ->addElement(array(
-        'id' => 'description',
-        'label' => __('LABEL_DESCRIPTION'),
-        'type' => 'editor'
+        'id' => 'agent_price',
+        'label' => __('LABEL_AGENT_PRICE'),
     ))
     ->addElement(array(
         'type' => 'submit',

@@ -159,3 +159,6 @@ msgstr "Giảm giá(%)"
 
 msgid "LABEL_DESCRIPTION"
 msgstr "Mô tả"
+
+msgid "LABEL_AGENT_PRICE"
+msgstr "Giá đại lý"
