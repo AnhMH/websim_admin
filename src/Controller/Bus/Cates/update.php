@@ -1,6 +1,6 @@
 <?php
 
-use App\Form\UpdateSupplierForm;
+use App\Form\UpdateCateForm;
 use App\Lib\Api;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
@@ -10,32 +10,31 @@ $data = null;
 if (!empty($id)) {
     // Edit
     $param['id'] = $id;
-    $data = Api::call(Configure::read('API.url_suppliers_detail'), $param);
+    $data = Api::call(Configure::read('API.url_cates_detail'), $param);
     $this->Common->handleException(Api::getError());
     if (empty($data)) {
-        AppLog::info("Customer unavailable", __METHOD__, $param);
-        throw new NotFoundException("Customer unavailable", __METHOD__, $param);
+        AppLog::info("Cate unavailable", __METHOD__, $param);
+        throw new NotFoundException("Cate unavailable", __METHOD__, $param);
     }
-    
-    $pageTitle = __('LABEL_SUPPLIER_UPDATE');
+
+    $pageTitle = __('LABEL_CATE_UPDATE');
 } else {
     // Create new
     $pageTitle = __('LABEL_ADD_NEW');
 }
 
 // Create breadcrumb
-$listPageUrl = h($this->BASE_URL . '/suppliers');
+$listPageUrl = h($this->BASE_URL . '/cates');
 $this->Breadcrumb->setTitle($pageTitle)
-    ->add(array(
-        'link' => $listPageUrl,
-        'name' => __('LABEL_SUPPLIER_LIST'),
-    ))
-    ->add(array(
-        'name' => $pageTitle,
-    ));
-
+        ->add(array(
+            'link' => $listPageUrl,
+            'name' => __('LABEL_CATE_LIST'),
+        ))
+        ->add(array(
+            'name' => $pageTitle,
+        ));
 // Create Update form 
-$form = new UpdateSupplierForm();
+$form = new UpdateCateForm();
 $this->UpdateForm->reset()
     ->setModel($form)
     ->setData($data)
@@ -49,18 +48,6 @@ $this->UpdateForm->reset()
         'id' => 'name',
         'label' => __('LABEL_NAME'),
         'required' => true,
-    ))
-    ->addElement(array(
-        'id' => 'phone',
-        'label' => __('LABEL_TEL'),
-    ))
-    ->addElement(array(
-        'id' => 'address',
-        'label' => __('LABEL_ADDRESS'),
-    ))
-    ->addElement(array(
-        'id' => 'facebook',
-        'label' => __('LABEL_FACEBOOK'),
     ))
     ->addElement(array(
         'type' => 'submit',
@@ -86,8 +73,8 @@ if ($this->request->is('post')) {
     // Validation
     if ($form->validate($data)) {
         // Call API
-        $id = Api::call(Configure::read('API.url_suppliers_addupdate'), $data);
-        if (!empty($id) && !Api::getError()) {            
+        $id = Api::call(Configure::read('API.url_cates_addupdate'), $data);
+        if (!empty($id) && !Api::getError()) {
             $this->Flash->success(__('MESSAGE_SAVE_OK'));
             return $this->redirect("{$this->BASE_URL}/{$this->controller}/update/{$id}");
         } else {

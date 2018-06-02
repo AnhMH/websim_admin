@@ -6,7 +6,7 @@ $this->doGeneralAction();
 $pageSize = Configure::read('Config.PageSize');
 
 // Create breadcrumb
-$pageTitle = __('LABEL_PRODUCT_LIST');
+$pageTitle = __('LABEL_TAG_LIST');
 $this->Breadcrumb->setTitle($pageTitle)
         ->add(array(
             'name' => $pageTitle,
@@ -21,8 +21,8 @@ $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
-            'id' => 'id',
-            'label' => __('LABEL_TEL')
+            'id' => 'name',
+            'label' => __('LABEL_NAME')
         ))
         ->addElement(array(
             'id' => 'limit',
@@ -40,7 +40,7 @@ $param = $this->getParams(array(
     'disable' => 0
 ));
 
-$result = Api::call(Configure::read('API.url_products_list'), $param);
+$result = Api::call(Configure::read('API.url_tags_list'), $param);
 $total = !empty($result['total']) ? $result['total'] : 0;
 $data = !empty($result['data']) ? $result['data'] : array();
 
@@ -55,35 +55,11 @@ $this->SimpleTable
             'width' => 20,
         ))
         ->addColumn(array(
-            'id' => 'id',
-            'title' => __('LABEL_TEL'),
+            'id' => 'name',
+            'title' => __('LABEL_NAME'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
             'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'cate_name',
-            'title' => __('LABEL_CATEGORY'),
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'price',
-            'title' => __('LABEL_PRICE'),
-            'width' => 150,
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'agent_price',
-            'title' => __('LABEL_AGENT_PRICE'),
-            'width' => 150,
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'created',
-            'type' => 'dateonly',
-            'title' => __('LABEL_CREATED'),
-            'width' => 100,
-            'empty' => '',
         ))
         ->addColumn(array(
             'type' => 'link',

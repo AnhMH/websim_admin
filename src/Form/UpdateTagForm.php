@@ -5,7 +5,7 @@ namespace App\Form;
 use Cake\Form\Form;
 use Cake\Validation\Validator;
 
-class UpdateSupplierForm extends Form {
+class UpdateTagForm extends Form {
 
     /**
      * Build Validator

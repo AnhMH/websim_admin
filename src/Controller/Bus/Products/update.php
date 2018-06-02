@@ -7,6 +7,7 @@ use Cake\Network\Exception\NotFoundException;
 
 // Load detail
 $data = null;
+$form = new UpdateProductForm();
 if (!empty($id)) {
     // Edit
     $param['id'] = $id;
@@ -16,70 +17,25 @@ if (!empty($id)) {
         AppLog::info("Product unavailable", __METHOD__, $param);
         throw new NotFoundException("Product unavailable", __METHOD__, $param);
     }
-    
+
     $pageTitle = __('LABEL_PRODUCT_UPDATE');
 } else {
     // Create new
     $pageTitle = __('LABEL_ADD_NEW');
 }
-
+$data['cates'] = Api::call(Configure::read('API.url_cates_all'), array());
+$data['tags'] = Api::call(Configure::read('API.url_tags_all'), array());
+$data['suppliers'] = Api::call(Configure::read('API.url_suppliers_all'), array());
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/products');
 $this->Breadcrumb->setTitle($pageTitle)
-    ->add(array(
-        'link' => $listPageUrl,
-        'name' => __('LABEL_PRODUCT_LIST'),
-    ))
-    ->add(array(
-        'name' => $pageTitle,
-    ));
-
-// Create Update form 
-$form = new UpdateProductForm();
-$this->UpdateForm->reset()
-    ->setModel($form)
-    ->setData($data)
-    ->setAttribute('autocomplete', 'off')
-    ->addElement(array(
-        'id' => 'id',
-        'type' => 'hidden',
-        'label' => __('id'),
-    ))
-    ->addElement(array(
-        'id' => 'name',
-        'label' => __('LABEL_NAME'),
-        'required' => true,
-    ))
-    ->addElement(array(
-        'id' => 'avatar',
-        'label' => __('LABEL_AVATAR'),
-        'image' => true,
-        'type' => 'file'
-    ))
-    ->addElement(array(
-        'id' => 'price',
-        'label' => __('LABEL_PRICE'),
-    ))
-    ->addElement(array(
-        'id' => 'discount',
-        'label' => __('LABEL_DISCOUNT'),
-    ))
-    ->addElement(array(
-        'id' => 'description',
-        'label' => __('LABEL_DESCRIPTION'),
-        'type' => 'editor'
-    ))
-    ->addElement(array(
-        'type' => 'submit',
-        'value' => __('LABEL_SAVE'),
-        'class' => 'btn btn-primary',
-    ))
-    ->addElement(array(
-        'type' => 'submit',
-        'value' => __('LABEL_CANCEL'),
-        'class' => 'btn',
-        'onclick' => "return back();"
-    ));
+        ->add(array(
+            'link' => $listPageUrl,
+            'name' => __('LABEL_PRODUCT_LIST'),
+        ))
+        ->add(array(
+            'name' => $pageTitle,
+        ));
 
 // Valdate and update
 if ($this->request->is('post')) {
@@ -98,9 +54,12 @@ if ($this->request->is('post')) {
             $filedata = $data['avatar']['tmp_name'];
             $data['avatar'] = new CurlFile($filedata, $filetype, $filename);
         }
+        if (!empty($data['tag_id'])) {
+            $data['tag_id'] = implode(',', $data['tag_id']);
+        }
         // Call API
         $id = Api::call(Configure::read('API.url_products_addupdate'), $data);
-        if (!empty($id) && !Api::getError()) {            
+        if (!empty($id) && !Api::getError()) {
             $this->Flash->success(__('MESSAGE_SAVE_OK'));
             return $this->redirect("{$this->BASE_URL}/{$this->controller}/update/{$id}");
         } else {
@@ -108,3 +67,6 @@ if ($this->request->is('post')) {
         }
     }
 }
+
+$this->set('data', $data);
+$this->set('param', $param);

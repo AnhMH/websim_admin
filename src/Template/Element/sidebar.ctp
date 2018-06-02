@@ -33,10 +33,17 @@
                 </a>
             </li>
             
-            <li class="<?php if (in_array($controller, array('customers'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/customers">
+            <li class="<?php if (in_array($controller, array('cates'))) echo ' active ' ?>">
+                <a href="<?php echo $BASE_URL;?>/cates">
                     <i class="fa fa-user"></i>
-                    <span><?php echo __('LABEL_CUSTOMER_MANAGEMENT'); ?></span>
+                    <span><?php echo __('LABEL_CATE_MANAGEMENT'); ?></span>
+                </a>
+            </li>
+            
+            <li class="<?php if (in_array($controller, array('tags'))) echo ' active ' ?>">
+                <a href="<?php echo $BASE_URL;?>/tags">
+                    <i class="fa fa-user"></i>
+                    <span><?php echo __('LABEL_TAG_MANAGEMENT'); ?></span>
                 </a>
             </li>
             
