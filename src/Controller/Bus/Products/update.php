@@ -24,6 +24,7 @@ if (!empty($id)) {
     $pageTitle = __('LABEL_ADD_NEW');
 }
 $data['cates'] = Api::call(Configure::read('API.url_cates_all'), array());
+$data['tags'] = Api::call(Configure::read('API.url_tags_all'), array());
 $data['suppliers'] = Api::call(Configure::read('API.url_suppliers_all'), array());
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/products');
@@ -52,6 +53,9 @@ if ($this->request->is('post')) {
             $filename = $data['avatar']['name'];
             $filedata = $data['avatar']['tmp_name'];
             $data['avatar'] = new CurlFile($filedata, $filetype, $filename);
+        }
+        if (!empty($data['tag_id'])) {
+            $data['tag_id'] = implode(',', $data['tag_id']);
         }
         // Call API
         $id = Api::call(Configure::read('API.url_products_addupdate'), $data);
