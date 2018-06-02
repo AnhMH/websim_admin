@@ -25,27 +25,9 @@ $this->SearchForm
             'label' => __('LABEL_NAME')
         ))
         ->addElement(array(
-            'id' => 'address',
-            'label' => __('LABEL_ADDRESS')
-        ))
-        ->addElement(array(
-            'id' => 'tel',
-            'label' => __('LABEL_TEL')
-        ))
-        ->addElement(array(
-            'id' => 'email',
-            'label' => __('LABEL_EMAIL')
-        ))
-        ->addElement(array(
             'id' => 'limit',
             'label' => __('LABEL_LIMIT'),
             'options' => Configure::read('Config.searchPageSize'),
-        ))
-        ->addElement(array(
-            'id' => 'disable',
-            'label' => __('LABEL_STATUS'),
-            'options' => Configure::read('Config.searchStatus'),
-            'empty' => 0
         ))
         ->addElement(array(
             'type' => 'submit',
@@ -85,22 +67,16 @@ $this->SimpleTable
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'tel',
+            'id' => 'phone',
             'title' => __('LABEL_TEL'),
             'width' => 150,
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'email',
-            'title' => __('LABEL_EMAIL'),
+            'id' => 'facebook',
+            'title' => __('LABEL_FACEBOOK'),
             'width' => 150,
             'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'order_count',
-            'title' => __('LABEL_ORDER_COUNT'),
-            'width' => 150,
-            'empty' => 0
         ))
         ->addColumn(array(
             'id' => 'created',

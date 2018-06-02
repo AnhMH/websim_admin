@@ -15,11 +15,6 @@ class UpdateSupplierForm extends Form {
      */
     protected function _buildValidator(Validator $validator) {
         return $validator
-                        ->allowEmpty('email')
-                        ->add('email', 'validFormat', [
-                            'rule' => 'email',
-                            'message' => __('MESSAGE_INVALID_EMAIL_FORMAT')
-                        ])
                         ->notEmpty('name', __('MESSAGE_REQUIRED_NAME'))
         ;
     }

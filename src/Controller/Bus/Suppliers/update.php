@@ -1,6 +1,6 @@
 <?php
 
-use App\Form\UpdateCustomerForm;
+use App\Form\UpdateSupplierForm;
 use App\Lib\Api;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
@@ -35,7 +35,7 @@ $this->Breadcrumb->setTitle($pageTitle)
     ));
 
 // Create Update form 
-$form = new UpdateCustomerForm();
+$form = new UpdateSupplierForm();
 $this->UpdateForm->reset()
     ->setModel($form)
     ->setData($data)
@@ -51,7 +51,7 @@ $this->UpdateForm->reset()
         'required' => true,
     ))
     ->addElement(array(
-        'id' => 'tel',
+        'id' => 'phone',
         'label' => __('LABEL_TEL'),
     ))
     ->addElement(array(
@@ -59,13 +59,8 @@ $this->UpdateForm->reset()
         'label' => __('LABEL_ADDRESS'),
     ))
     ->addElement(array(
-        'id' => 'email',
-        'label' => __('LABEL_EMAIL'),
-    ))
-    ->addElement(array(
-        'id' => 'note',
-        'label' => __('LABEL_NOTE'),
-        'type' => 'editor'
+        'id' => 'facebook',
+        'label' => __('LABEL_FACEBOOK'),
     ))
     ->addElement(array(
         'type' => 'submit',
