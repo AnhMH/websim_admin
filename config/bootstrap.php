@@ -247,6 +247,11 @@ Configure::write('Config.searchStatus', array(
     1 => __('LABEL_INACTIVE'),
 ));
 
+Configure::write('Config.tagTypes', array(
+    1 => 'Số vip',
+    2 => 'Số dễ nhớ',
+));
+
 if ($env == 'production') {
     define('VERSION_DATE', date('Ymd'));
     include_once ('production/bootstrap.php');

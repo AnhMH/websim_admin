@@ -189,3 +189,6 @@ msgstr "Danh sách thể loại"
 
 msgid "LABEL_TAG_UPDATE"
 msgstr "Cập nhật thể loại"
+
+msgid "LABEL_TYPE"
+msgstr "Thể loại"

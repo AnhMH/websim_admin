@@ -50,6 +50,12 @@ $this->UpdateForm->reset()
         'required' => true,
     ))
     ->addElement(array(
+        'id' => 'type',
+        'label' => __('LABEL_TYPE'),
+        'required' => true,
+        'options' => Configure::read('Config.tagTypes')
+    ))
+    ->addElement(array(
         'type' => 'submit',
         'value' => __('LABEL_SAVE'),
         'class' => 'btn btn-primary',
