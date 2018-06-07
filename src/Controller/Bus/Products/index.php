@@ -55,7 +55,7 @@ $this->SimpleTable
             'width' => 20,
         ))
         ->addColumn(array(
-            'id' => 'id',
+            'id' => 'name',
             'title' => __('LABEL_TEL'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',

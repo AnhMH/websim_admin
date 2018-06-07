@@ -25,6 +25,11 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label><?php echo __('LABEL_DISPLAY_NAME');?></label>
+                            <input type="text" name="name" class="form-control" value="<?php echo !empty($data['name']) ? $data['name'] : ''; ?>">
+                            
+                        </div>
+                        <div class="form-group">
                             <label><?php echo __('LABEL_PRICE');?></label>
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
