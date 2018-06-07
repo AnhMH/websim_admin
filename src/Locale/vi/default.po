@@ -192,3 +192,18 @@ msgstr "Cập nhật thể loại"
 
 msgid "LABEL_TYPE"
 msgstr "Thể loại"
+
+msgid "LABEL_CATE_NAME"
+msgstr "Nhà mạng"
+
+msgid "LABEL_DISPLAY_NAME"
+msgstr "Tên hiển thị"
+
+msgid "LABEL_SUB_CATE"
+msgstr "Đầu số"
+
+msgid "LABEL_SUB_CATE_LIST"
+msgstr "Danh sách đầu số"
+
+msgid "LABEL_SUB_CATE_UPDATE"
+msgstr "Cập nhật đầu số"

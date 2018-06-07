@@ -30,6 +30,11 @@ Configure::write('API.url_products_list', 'products/list');
 Configure::write('API.url_products_detail', 'products/detail');
 Configure::write('API.url_products_addupdate', 'products/addupdate');
 
+Configure::write('API.url_subcates_list', 'subcates/list');
+Configure::write('API.url_subcates_all', 'subcates/all');
+Configure::write('API.url_subcates_detail', 'subcates/detail');
+Configure::write('API.url_subcates_addupdate', 'subcates/addupdate');
+
 Configure::write('API.url_cates_list', 'cates/list');
 Configure::write('API.url_cates_all', 'cates/all');
 Configure::write('API.url_cates_detail', 'cates/detail');
