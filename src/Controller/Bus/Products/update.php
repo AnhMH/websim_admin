@@ -67,6 +67,6 @@ if ($this->request->is('post')) {
         }
     }
 }
-
+$param['old_id'] = !empty($id) ? $id : 0;
 $this->set('data', $data);
 $this->set('param', $param);

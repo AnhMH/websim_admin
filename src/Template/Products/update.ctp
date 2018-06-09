@@ -15,6 +15,7 @@
                         autocomplete="off" 
                         novalidate="novalidate" 
                         action="/products/update/<?php echo !empty($param['id']) ? $param['id'] : '';?>">
+                        <input type="hidden" name="old_id" class="form-control" value="<?php echo !empty($param['old_id']) ? $param['old_id'] : ''; ?>">
                         <div class="form-group">
                             <label><?php echo __('LABEL_TEL');?></label>
                             <div class="input-group">
