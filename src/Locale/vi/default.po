@@ -207,3 +207,15 @@ msgstr "Danh sách đầu số"
 
 msgid "LABEL_SUB_CATE_UPDATE"
 msgstr "Cập nhật đầu số"
+
+msgid "LABEL_SUB_CATE_MANAGEMENT"
+msgstr "Quản lý đầu số"
+
+msgid "LABEL_PAGE_MANAGEMENT"
+msgstr "Quản lý menu"
+
+msgid "LABEL_PAGE_LIST"
+msgstr "Danh sách menu"
+
+msgid "LABEL_PAGE_UPDATE"
+msgstr "Cập nhật menu"
