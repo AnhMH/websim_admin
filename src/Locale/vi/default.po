@@ -219,3 +219,12 @@ msgstr "Danh sách menu"
 
 msgid "LABEL_PAGE_UPDATE"
 msgstr "Cập nhật menu"
+
+msgid "LABEL_NEWS_MANAGEMENT"
+msgstr "Quản lý tin tức"
+
+msgid "LABEL_NEW_LIST"
+msgstr "Danh sách tin tức"
+
+msgid "LABEL_NEW_UPDATE"
+msgstr "Cập nhật tin tức"

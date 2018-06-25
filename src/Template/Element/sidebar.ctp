@@ -61,6 +61,13 @@
                 </a>
             </li>
             
+            <li class="<?php if (in_array($controller, array('news'))) echo ' active ' ?>">
+                <a href="<?php echo $BASE_URL;?>/news">
+                    <i class="fa fa-user-secret"></i>
+                    <span><?php echo __('LABEL_NEWS_MANAGEMENT'); ?></span>
+                </a>
+            </li>
+            
             <li class="treeview <?php if (in_array($controller, array('admins', 'pages'))) echo ' active ' ?>">
                 <a href="#">
                     <i class="fa fa-cogs"></i> 
