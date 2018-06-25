@@ -67,6 +67,16 @@ $this->SimpleTable
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
             'button' => true,
             'width' => 50,
+        ))
+        ->addButton(array(
+            'type' => 'submit',
+            'value' => __('LABEL_ADD_NEW'),
+            'class' => 'btn btn-success btn-addnew',
+        ))
+        ->addButton(array(
+            'type' => 'submit',
+            'value' => __('LABEL_DELETE'),
+            'class' => 'btn btn-danger btn-disable',
         ));
 
 $this->set('pageTitle', $pageTitle);

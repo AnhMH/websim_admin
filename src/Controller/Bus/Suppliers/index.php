@@ -114,20 +114,12 @@ $this->SimpleTable
             'type' => 'submit',
             'value' => __('LABEL_ADD_NEW'),
             'class' => 'btn btn-success btn-addnew',
-        ));
-if (!empty($param['disable'])) {
-    $this->SimpleTable->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_ENABLE'),
-            'class' => 'btn asds btn-primary btn-enable',
-        ));
-} else {
-    $this->SimpleTable->addButton(array(
+        ))
+        ->addButton(array(
             'type' => 'submit',
             'value' => __('LABEL_DELETE'),
             'class' => 'btn btn-danger btn-disable',
         ));
-} 
 
 $this->set('pageTitle', $pageTitle);
 $this->set('total', $total);

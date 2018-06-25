@@ -96,6 +96,11 @@ $this->SimpleTable
             'type' => 'submit',
             'value' => __('LABEL_ADD_NEW'),
             'class' => 'btn btn-success btn-addnew',
+        ))
+        ->addButton(array(
+            'type' => 'submit',
+            'value' => __('LABEL_DELETE'),
+            'class' => 'btn btn-danger btn-disable',
         ));
 
 $this->set('pageTitle', $pageTitle);
