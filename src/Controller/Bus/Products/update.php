@@ -48,11 +48,11 @@ if ($this->request->is('post')) {
     }
     // Validation
     if ($form->validate($data)) {
-        if (!empty($data['avatar']['name'])) {
-            $filetype = $data['avatar']['type'];
-            $filename = $data['avatar']['name'];
-            $filedata = $data['avatar']['tmp_name'];
-            $data['avatar'] = new CurlFile($filedata, $filetype, $filename);
+        if (!empty($data['image']['name'])) {
+            $filetype = $data['image']['type'];
+            $filename = $data['image']['name'];
+            $filedata = $data['image']['tmp_name'];
+            $data['image'] = new CurlFile($filedata, $filetype, $filename);
         }
         if (!empty($data['tag_id'])) {
             $data['tag_id'] = implode(',', $data['tag_id']);

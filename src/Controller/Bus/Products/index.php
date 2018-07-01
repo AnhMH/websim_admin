@@ -55,6 +55,13 @@ $this->SimpleTable
             'width' => 20,
         ))
         ->addColumn(array(
+            'id' => 'image',
+            'title' => __('LABEL_IMAGE'),
+            'type' => 'image',
+            'src' => "{image}",
+            'width' => '200'
+        ))
+        ->addColumn(array(
             'id' => 'name',
             'title' => __('LABEL_TEL'),
             'type' => 'link',

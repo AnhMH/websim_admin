@@ -22,26 +22,33 @@
                                 <div class="input-group-addon">
                                   <i class="fa fa-phone"></i>
                                 </div>
-                                <input type="text" name="id" class="form-control" value="<?php echo !empty($data['id']) ? $data['id'] : ''; ?>">
+                                <input type="text" name="name" class="form-control" value="<?php echo !empty($data['name']) ? $data['name'] : ''; ?>">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label><?php echo __('LABEL_DISPLAY_NAME');?></label>
-                            <input type="text" name="name" class="form-control" value="<?php echo !empty($data['name']) ? $data['name'] : ''; ?>">
-                            
+                        <div class="form-group file">
+                            <label class="" for="image"><?php echo __('LABEL_IMAGE');?></label>
+                            <input type="file" name="image" id="image">
+                            <?php if (!empty($data['image'])): ?>
+                            <div style="margin-top:5px;max-width:120px;">
+                                <a data-lightbox="lightbox-update-form" href="<?php echo $data['image'];?>" class="js-thumb">
+                                    <img src="<?php echo $data['image'];?>" style="width:120px" alt=""/>
+                                </a>
+                                <div class="cls"></div>
+                            </div>
+                            <?php endif; ?>
                         </div>
                         <div class="form-group">
                             <label><?php echo __('LABEL_PRICE');?></label>
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
-                                <input type="text" name="price" class="form-control" value="<?php echo !empty($data['price']) ? $data['price'] : ''; ?>">
+                                <input type="text" name="price" class="form-control" value="<?php echo !empty($data['price']) ? number_format($data['price']) : ''; ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label><?php echo __('LABEL_AGENT_PRICE');?></label>
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
-                                <input type="text" name="agent_price" class="form-control" value="<?php echo !empty($data['agent_price']) ? $data['agent_price'] : ''; ?>">
+                                <input type="text" name="agent_price" class="form-control" value="<?php echo !empty($data['agent_price']) ? number_format($data['agent_price']) : ''; ?>">
                             </div>
                         </div>
                         <div class="form-group">

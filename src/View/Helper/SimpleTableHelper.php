@@ -424,8 +424,8 @@ class SimpleTableHelper extends AppHelper {
                 }
                 $value = $rowItem['value'];
                 // begin LongDH - format Price
-                if(($field == 'price' || $field == 'total_price' || $field == 'total_tax') && is_numeric($rowItem['value'])){
-                    $value = '¥' .number_format($rowItem['value']);
+                if(($field == 'price' || $field == 'total_price' || $field == 'total_tax' || $field == 'agent_price') && is_numeric($rowItem['value'])){
+                    $value = number_format($rowItem['value']);
                 }
                 if($field == 'content_type_popup'){
                     if(empty($rowItem['value'])){
