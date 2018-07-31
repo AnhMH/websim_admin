@@ -228,3 +228,12 @@ msgstr "Danh sách tin tức"
 
 msgid "LABEL_NEW_UPDATE"
 msgstr "Cập nhật tin tức"
+
+msgid "LABEL_DETAIL"
+msgstr "Chi tiết"
+
+msgid "LABEL_ORDER_LIST"
+msgstr "Danh sách đơn hàng"
+
+msgid "LABEL_TOTAL_PRICE"
+msgstr "Tổng tiền"
