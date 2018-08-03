@@ -68,7 +68,7 @@
                 </a>
             </li>
             
-            <li class="treeview <?php if (in_array($controller, array('admins', 'pages'))) echo ' active ' ?>">
+            <li class="treeview <?php if (in_array($controller, array('admins', 'pages', 'hotlines'))) echo ' active ' ?>">
                 <a href="#">
                     <i class="fa fa-cogs"></i> 
                     <span><span><?php echo __('LABEL_SETTING_MANAGEMENT'); ?></span></span>
@@ -85,6 +85,11 @@
                     <li class="<?php if ($controller == 'pages') echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/pages">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_PAGE_MANAGEMENT');?>
+                        </a>
+                    </li>
+                    <li class="<?php if ($controller == 'hotlines') echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/hotlines">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_HOTLINE_MANAGEMENT');?>
                         </a>
                     </li>
                 </ul>

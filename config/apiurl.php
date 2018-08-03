@@ -12,6 +12,10 @@ Configure::write('API.rewriteUrl', array());
 Configure::write('API.url_admins_login', 'admins/login');
 Configure::write('API.url_admins_updateprofile', 'admins/updateprofile');
 
+Configure::write('API.url_hotlines_list', 'hotlines/list');
+Configure::write('API.url_hotlines_detail', 'hotlines/detail');
+Configure::write('API.url_hotlines_addupdate', 'hotlines/addupdate');
+
 Configure::write('API.url_customers_list', 'customers/list');
 Configure::write('API.url_customers_detail', 'customers/detail');
 Configure::write('API.url_customers_addupdate', 'customers/addupdate');

@@ -237,3 +237,15 @@ msgstr "Danh sách đơn hàng"
 
 msgid "LABEL_TOTAL_PRICE"
 msgstr "Tổng tiền"
+
+msgid "LABEL_HOTLINE_LIST"
+msgstr "Danh sách hotline"
+
+msgid "LABEL_HOTLINE_UPDATE"
+msgstr "Cập nhật hotline"
+
+msgid "LABEL_HOTLINE_MANAGEMENT"
+msgstr "Quản lý hotline"
+
+msgid "LABEL_ORDER"
+msgstr "Vị trí hiển thị"
