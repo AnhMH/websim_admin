@@ -249,3 +249,18 @@ msgstr "Quản lý hotline"
 
 msgid "LABEL_ORDER"
 msgstr "Vị trí hiển thị"
+
+msgid "LABEL_WEB_BANNER"
+msgstr "Web banner"
+
+msgid "LABEL_HOMEPAGE_BLOCK"
+msgstr "Nội dung trang chủ"
+
+msgid "LABEL_PRODUCT_BLOCK"
+msgstr "Nội dung trang chi tiết sim"
+
+msgid "LABEL_ORDER_BLOCK"
+msgstr "Nội dung trang thanh toán"
+
+msgid "LABEL_COMPANY_NAME"
+msgstr "Tên công ty"

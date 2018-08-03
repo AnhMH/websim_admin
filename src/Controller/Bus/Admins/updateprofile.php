@@ -55,12 +55,29 @@ $this->UpdateForm->reset()
         'type' => 'file'
     ))
     ->addElement(array(
-        'id' => 'website',
-        'label' => __('LABEL_WEBSITE'),
+        'id' => 'web_banner',
+        'label' => __('LABEL_WEB_BANNER'),
+        'image' => true,
+        'type' => 'file'
     ))
     ->addElement(array(
-        'id' => 'facebook',
-        'label' => __('LABEL_FACEBOOK'),
+        'id' => 'company_name',
+        'label' => __('LABEL_COMPANY_NAME'),
+    ))
+    ->addElement(array(
+        'id' => 'homepage_block',
+        'label' => __('LABEL_HOMEPAGE_BLOCK'),
+        'type' => 'editor'
+    ))
+    ->addElement(array(
+        'id' => 'product_block',
+        'label' => __('LABEL_PRODUCT_BLOCK'),
+        'type' => 'editor'
+    ))
+    ->addElement(array(
+        'id' => 'order_block',
+        'label' => __('LABEL_ORDER_BLOCK'),
+        'type' => 'editor'
     ))
     ->addElement(array(
         'type' => 'submit',
@@ -90,6 +107,12 @@ if ($this->request->is('post')) {
             $filename = $data['avatar']['name'];
             $filedata = $data['avatar']['tmp_name'];
             $data['avatar'] = new CurlFile($filedata, $filetype, $filename);
+        }
+        if (!empty($data['web_banner']['name'])) {
+            $filetype = $data['web_banner']['type'];
+            $filename = $data['web_banner']['name'];
+            $filedata = $data['web_banner']['tmp_name'];
+            $data['web_banner'] = new CurlFile($filedata, $filetype, $filename);
         }
         // Call API to Login
         $admin = array();
