@@ -58,3 +58,5 @@ Configure::write('API.url_orders_list', 'orders/list');
 Configure::write('API.url_orders_all', 'orders/all');
 Configure::write('API.url_orders_detail', 'orders/detail');
 Configure::write('API.url_orders_addupdate', 'orders/addupdate');
+
+Configure::write('API.url_settings_general', 'settings/general');

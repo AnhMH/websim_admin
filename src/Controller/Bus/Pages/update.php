@@ -23,6 +23,13 @@ if (!empty($id)) {
     $pageTitle = __('LABEL_ADD_NEW');
 }
 
+$footerMenuTypes = array(
+    '1' => 'Chính sách bán hàng',
+    '2' => 'Hỗ trợ chung',
+    '3' => 'Thông tin liên hệ',
+    '4' => 'Dịch vụ khác'
+);
+
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/pages');
 $this->Breadcrumb->setTitle($pageTitle)
@@ -51,11 +58,17 @@ $this->UpdateForm->reset()
     ))
     ->addElement(array(
         'id' => 'is_main_menu',
-        'label' => __('LABEL_IS_MAIN_MENU')
+        'label' => __('LABEL_IS_MAIN_MENU'),
+        'options' => array(
+            '0' => 'No',
+            '1' => 'Yes'
+        )
     ))
     ->addElement(array(
         'id' => 'footer_menu_type',
-        'label' => __('LABEL_FOOTER_MENU_TYPE')
+        'label' => __('LABEL_FOOTER_MENU_TYPE'),
+        'options' => $footerMenuTypes,
+        'empty' => '------'
     ))
     ->addElement(array(
         'id' => 'order',

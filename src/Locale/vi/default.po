@@ -264,3 +264,15 @@ msgstr "Nội dung trang thanh toán"
 
 msgid "LABEL_COMPANY_NAME"
 msgstr "Tên công ty"
+
+msgid "LABEL_IS_MAIN_MENU"
+msgstr "Menu chính"
+
+msgid "LABEL_FOOTER_MENU_TYPE"
+msgstr "Loại menu phụ"
+
+msgid "LABEL_CONTENT"
+msgstr "Nội dung"
+
+msgid "LABEL_ORDER_UPDATE"
+msgstr "Chi tiết đơn hàng"
